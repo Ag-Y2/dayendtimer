@@ -1,0 +1,67 @@
+@font-face {
+    font-family: 'arita';
+    src: url('https://marketb.kr/web/img/event/2109/ARITA-BURIB.OTF') format('opentype');
+}
+
+[v-cloak] {
+    display: none;
+}
+
+body {
+    /*    background-color: rgb(181, 113, 92);*/
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main.bg {}
+
+.main.bg img {
+    width: 100%;
+    height: 100vh;
+    aspect-ratio: 16 / 9;
+}
+
+.dayend-wrap {
+    font-size: 8rem;
+    font-family: 'arita';
+    color: cornsilk;
+    font-weight: 900;
+}
+
+#dayend {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#lastday {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    font-weight: 600;
+    color: darksalmon;
+}
+
+#lastday .desc {}
+
+#lastday {
+    display: flex;
+    gap: 15px;
+}
+
+#lastday:hover {}
+
+#lastday .num {
+    display: none;
+}
+
+#lastday:hover .num {
+    display: block;
+}
+
+.tc_num {
+    display: flex;
+}

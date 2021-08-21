@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!--===css control===-->
+    <link rel="stylesheet" type="text/css" href="css/dday.css?ver=1.0">
+    <!--===/css control== <link rel="stylesheet" type="text/css" href="css/sidemenu.css?ver=1.0">=-->
+    <script type="text/javascript" src="js/dday.js?ver=1.0"></script>
+    <!---========== vue js =========-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+    <title>dDay</title>
+</head>
+
+<body>
+    <section>
+        <div class="main bg">
+            <img src='https://1.bp.blogspot.com/-VdvC0tTOFSM/YQoNNlRTf1I/AAAAAAAAJug/x138o1flWUUsAsV8A_gN8lDJb1ZNMzKsACPcBGAsYHg/w919-h516-p-k-no-nu/jake-lofi-chill-adventure-time-4k-uhdpaper.com-448.0_b-thumbnail.jpg'>
+        </div>
+
+        <div id='dayend' v-cloak>
+            <div class="dayend-wrap">
+                {{time}}
+            </div>
+        </div>
+
+        <div id="lastday" v-cloak>
+            <span class="tc_num desc">D-Day</span>
+            <span class="tc_num num">{{time.date}}일</span>
+            <span class="tc_num num">{{time.hrs}}시</span>
+            <span class="tc_num num">{{time.mins}}분</span>
+            <span class="tc_num num">{{time.sec}}초</span>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
