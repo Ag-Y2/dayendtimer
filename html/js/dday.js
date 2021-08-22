@@ -30,6 +30,11 @@ function vue_init() {
         updated: function() {
             this.pickday();
             lastday.dday = cal.selectedDate;
+
+            var _url = `${cal.selectedDate.getFullYear()}${cal.selectedDate.getMonth() + 1}${cal.selectedDate.getDate()}`;
+            _url = `${window.location.href}?remain=${_url}`;
+            history.pushState(null, null, _url);
+
         }
 
 
