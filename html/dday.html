@@ -11,12 +11,15 @@
     <script type="text/javascript" src="js/dday.js?ver=1.0"></script>
     <!---========== vue js =========-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-
-
+    <!---https://www.jsdelivr.com/package/npm/v-calendar
+        https://vcalendar.io/datepicker.html
+        --->
+    <script src="https://cdn.jsdelivr.net/npm/v-calendar@2.3.2/lib/v-calendar.umd.min.js"></script>
     <title>dDay</title>
 </head>
 
 <body>
+
     <section>
         <div class="main bg">
             <img src='https://1.bp.blogspot.com/-VdvC0tTOFSM/YQoNNlRTf1I/AAAAAAAAJug/x138o1flWUUsAsV8A_gN8lDJb1ZNMzKsACPcBGAsYHg/w919-h516-p-k-no-nu/jake-lofi-chill-adventure-time-4k-uhdpaper.com-448.0_b-thumbnail.jpg'>
@@ -29,7 +32,6 @@
         </div>
 
         <div id="lastday" v-cloak>
-            <span class="tc_num desc">D-Day</span>
             <span class="tc_num num">{{time.date}}일</span>
             <span class="tc_num num">{{time.hrs}}시</span>
             <span class="tc_num num">{{time.mins}}분</span>
@@ -37,6 +39,17 @@
         </div>
 
     </section>
+
+    <section>
+        <div class="calendar">
+            <div class="calwrap">
+                <v-date-picker class="datepicker" v-model='selectedDate' @click="handleDateClick"></v-date-picker>
+            </div>
+            <div class="calbtn" @click="pickday">D-Day</div>
+
+        </div>
+    </section>
+
 
 </body>
 

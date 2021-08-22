@@ -8,6 +8,34 @@ window.addEventListener("load", function(event) {
 
 function vue_init() {
 
+    var cal = new Vue({
+        el: ".calendar",
+        data: {
+            selectedDate: new Date('12/10/2021 18:30:00')
+        },
+        methods: {
+            pickday: function() {
+                var calwrap = document.querySelector('.calwrap');
+                if (calwrap.classList.contains('active')) {
+                    calwrap.classList.remove('active');
+                } else {
+                    calwrap.classList.add('active');
+                }
+
+            },
+            handleDateClick: function() {
+                console.log('dclikc');
+            }
+        },
+        updated: function() {
+            this.pickday();
+            lastday.dday = cal.selectedDate;
+        }
+
+
+    });
+
+
     var dayend = new Vue({
         el: "#dayend",
         data: {
@@ -15,6 +43,7 @@ function vue_init() {
         },
         methods: {
             getNow: function() {
+
                 var _vDate = new Date('12/10/2021 18:30:00');
                 var now = new Date();
 
@@ -65,7 +94,7 @@ function vue_init() {
             setInterval(this.getNow, 1000);
         }
 
-    })
+    });
 
 
 
@@ -84,6 +113,7 @@ function vue_init() {
         },
         methods: {
             getNow: function() {
+                //console.log();
                 var _vDate = new Date(this.dday);
                 var now = new Date();
                 var _second = 1000;
@@ -106,8 +136,9 @@ function vue_init() {
                 this.time['mins'] = minute;
                 this.time['sec'] = second;
             },
+
+
             check_url: function() {
-                console.log('hi');
                 var url = window.location.href;
                 var is_tploc = new RegExp('remain=*');
                 if (is_tploc.test(url)) {
@@ -116,6 +147,8 @@ function vue_init() {
                     var _dday = `${tpTarget.slice(4, 6)}/${tpTarget.slice(6, 8)}/${tpTarget.slice(0, 4)} 18:30:00`;
 
                     this.dday = _dday;
+                } else {
+                    this.dday = cal.selectedDate;
                 }
             }
         },

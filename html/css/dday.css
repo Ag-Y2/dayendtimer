@@ -29,6 +29,7 @@ body {
 }
 
 #dayend {
+    width: max-content;
     position: absolute;
     top: 25%;
     left: 50%;
@@ -50,18 +51,37 @@ body {
 #lastday {
     display: flex;
     gap: 15px;
+    width: max-content;
 }
 
 #lastday:hover {}
 
-#lastday .num {
-    display: none;
-}
+#lastday .num {}
 
-#lastday:hover .num {
-    display: block;
-}
+#lastday:hover .num {}
 
 .tc_num {
     display: flex;
+}
+
+.calendar {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+}
+
+.calbtn {
+    font-size: 2rem;
+    font-weight: 600;
+    color: darksalmon;
+    text-align: center;
+}
+
+.calwrap {
+    display: none;
+}
+
+.calwrap.active {
+    display: block;
 }
